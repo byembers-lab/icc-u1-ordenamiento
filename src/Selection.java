@@ -1,0 +1,48 @@
+public class Selection {
+    public void sort(int[] arreglo) {
+
+        System.out.println("Original");
+        imprimirArreglo(arreglo);
+
+        int comparaciones = 0;
+        int cambios = 0;
+
+        for (int i = 0; i < arreglo.length - 1; i++) {
+
+            int min = i;
+
+            for (int j = i + 1; j < arreglo.length; j++) {
+
+                comparaciones++;
+
+                if (arreglo[j] < arreglo[min]) {
+                    min = j;
+                }
+            }
+
+            if (min != i) {
+
+                int aux = arreglo[i];
+                arreglo[i] = arreglo[min];
+                arreglo[min] = aux;
+
+                cambios++;
+            }
+        }
+
+        System.out.println("Cambios: " + cambios);
+        System.out.println("Comparaciones: " + comparaciones);
+
+        System.out.println("Ordenado Ascendente");
+        imprimirArreglo(arreglo);
+    }
+
+    public void imprimirArreglo(int[] arreglo) {
+
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " - ");
+        }
+
+        System.out.println();
+    }
+}
