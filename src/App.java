@@ -9,8 +9,8 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        //runEjemplosPrimitivos();
-        //runEjemplosObjetos ();
+        runEjemplosPrimitivos();
+        runEjemplosObjetos ();
 
         int[] original = {5, 6, 4, 1, 2, 3};
         int[] b = original.clone();
