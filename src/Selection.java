@@ -1,8 +1,8 @@
+/**
+ * Author Ismael Alejandro Pauta Sotelo
+ */
 public class Selection {
     public void sort(int[] arreglo) {
-
-        System.out.println("Original");
-        imprimirArreglo(arreglo);
 
         int comparaciones = 0;
         int cambios = 0;
@@ -33,7 +33,7 @@ public class Selection {
         System.out.println("Cambios: " + cambios);
         System.out.println("Comparaciones: " + comparaciones);
 
-        System.out.println("Ordenado Ascendente");
+        System.out.print("Ordenado: ");
         imprimirArreglo(arreglo);
     }
 

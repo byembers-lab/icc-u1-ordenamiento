@@ -2,13 +2,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import models.Estudiante;
-
+/**
+ * Author Ismael Alejandro Pauta Sotelo
+ */
 public class App {
 
 
     public static void main(String[] args) throws Exception {
         //runEjemplosPrimitivos();
-        runEjemplosObjetos ();
+        //runEjemplosObjetos ();
 
         int[] original = {5, 6, 4, 1, 2, 3};
         int[] b = original.clone();
@@ -16,27 +18,31 @@ public class App {
         int[] d = original.clone();
 
         // Bubble Sort
-        System.out.println("Bubble");
-        Bubble bubble = new Bubble();
+        System.out.println("--Bubble--");
+        System.out.print("Original: ");
         printArreglo(b);
+        Bubble bubble = new Bubble();
         bubble.sort(b);
+        System.out.print("Ordenado: ");
         printArreglo(b);
 
         // Selection Sort
-        System.out.println("Selection");
+        System.out.println("--Selection--");
+        System.out.print("Original: ");
+        printArreglo(c);
         Selection selection = new Selection();
-        printArreglo(c);
         selection.sort(c);
-        printArreglo(c);
 
         // Insertion Sort
-        System.out.println("Insertion");
+         
+        System.out.println("--Insertion--");
         InsertionSort insertion = new InsertionSort();
+        System.out.print("Original: ");
         printArreglo(d);
         insertion.sort(d);
+        System.out.print("Ordenado: ");
         printArreglo(d);
-
-        System.out.println("Hello, World!");
+        
     }
 
     private static void runComparator(){
@@ -62,18 +68,18 @@ public class App {
             new Estudiante("Pedro", 6.8),
         };
         Bubble bubble = new Bubble();
-    }
 
+        System.out.println("Estudiantes ordenados por Nota");
+        bubble.sortEstudiantesN(estudiantes);
+        for (Estudiante e : estudiantes) {
+            System.out.println(e);
+        }
 
-    public static void insertion(int[] a) {
-        for (int i = 1 ; i < a.length; i++){
-            int key = a[i];
-            int j = i-1;
-            while (j >= 0 && a[j] > key){
-                a[j + 1] = a[j];
-                j--; 
-            }
-            a[j + 1] = key;        }
+        System.out.println("Estudiantes ordenados por Nombre");
+        bubble.sortEstudiantesName(estudiantes);
+        for (Estudiante e : estudiantes) {
+            System.out.println(e);
+        }
     }
 
     public static void printArreglo(int[] arr) {
@@ -81,8 +87,5 @@ public class App {
             System.out.print(arr[i] + " - ");
         }
         System.out.println();
-    }
-
-
-    
+    }    
 }
