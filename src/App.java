@@ -36,7 +36,6 @@ public class App {
         selection.sort(c);
 
         // Insertion Sort
-         
         System.out.println("--Insertion--");
         InsertionSort insertion = new InsertionSort();
         System.out.print("Original: ");
