@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 import models.Estudiante;
 /**
@@ -42,10 +44,51 @@ public class App {
         insertion.sort(d);
         System.out.print("Ordenado: ");
         printArreglo(d);
+
+        runComparators();
+        runComparatorObj();
+        runComparatorsOb2();
         
     }
 
-    private static void runComparator(){
+    private static  void runComparatorObj(){
+        List<Integer> numeros = 
+        new ArrayList<>(List.of(5, 6, 4, 1, 2, 3));
+
+        //orden de menor a mayor
+        numeros.sort(null);
+        System.out.println("Metodo sort orden natural:\n" + numeros);
+
+        //ordenar mayor a menor
+        numeros.sort(Comparator.reverseOrder());
+        System.out.println("Reverso:\n" + numeros);
+        
+    }
+
+    private static void runComparatorsOb2(){
+        Estudiante e1 = new Estudiante("Juan", 8);
+        Estudiante[] estudiantes = {e1, 
+            new Estudiante("Maria", 7),
+            new Estudiante("Diego", 3.5),
+            new Estudiante("Pedro", 6)
+        };
+        Comparator<Estudiante> compNota = Comparator.comparingDouble(e -> e.getNota());
+        Arrays.sort(estudiantes, compNota);
+        System.out.println(Arrays.toString(estudiantes));
+
+        List<Estudiante> estudiantesLista = new ArrayList<>(List.of(
+            new Estudiante("Maria", 7),
+            new Estudiante("Diego", 3.5),
+            new Estudiante("Pedro", 6.8)
+        ));
+
+        Comparator<Estudiante> compNotaLista = Comparator.comparingDouble(e -> e.getNota());
+        estudiantesLista.sort(compNotaLista);
+        System.out.println(estudiantesLista);
+        
+    }
+
+    private static void runComparators(){
         Integer [] original = {5, 6, 4, 1, 2, 3};
         //Array.sort -> ordena arreglos alfabeticamente por su orden natural
         Arrays.sort(original);
