@@ -21,7 +21,6 @@ public class Selection {
             }
 
             if (min != i) {
-                // Guardamos los valores antes de intercambiarlos para mostrarlos en consola
                 int valI = arreglo[i];
                 int valMin = arreglo[min];
 
@@ -31,7 +30,6 @@ public class Selection {
 
                 cambios++;
                 
-                // Imprimimos la pasada con el formato exacto de la primera imagen
                 System.out.println("Pasada= " + i + " | cambio " + valI + "<->" + valMin);
             }
         }

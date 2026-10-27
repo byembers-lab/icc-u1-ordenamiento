@@ -34,7 +34,7 @@ public class App {
         printArreglo(c);
         Selection selection = new Selection();
         selection.sort(c);
-
+        
         // Insertion Sort
         System.out.println("--Insertion--");
         InsertionSort insertion = new InsertionSort();
@@ -44,9 +44,10 @@ public class App {
         System.out.print("Ordenado: ");
         printArreglo(d);
 
+        /* 
         runComparators();
         runComparatorObj();
-        runComparatorsOb2();
+        runComparatorsOb2();*/
         
     }
 
